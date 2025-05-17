@@ -29,5 +29,5 @@ export const formatPhoneForDisplay = (phoneNumber) => {
     
     const encodedMessage = encodeURIComponent(message || 'Hello from Areti Alliance!');
     
-    return `sms:${grasshopperNumber}?body=${encodedMessage}`;
+    return `sms:${grasshopperNumber}?body=${encodedMessage}&address=${cleanNumber}`;
   };
