@@ -23,7 +23,8 @@ apiClient.interceptors.request.use(
 export const login = async (email, password) => {
   try {
     console.log('Attempting login with:', email);
-    const response = await apiClient.post('/api/auth/login', { email, password });
+    // Use the direct auth endpoint
+    const response = await apiClient.post('/direct-auth/login', { email, password });
     
     if (response.data && response.data.token) {
       // Store token and user in localStorage
