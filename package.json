@@ -55,5 +55,8 @@
     ]
   },
   "proxy": "http://localhost:5000",
-  "homepage": "https://dashboard.aretialliance.com"
+  "homepage": "https://dashboard.aretialliance.com",
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
+  }
 }

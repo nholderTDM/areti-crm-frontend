@@ -2,9 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with the correct base URL
 const apiClient = axios.create({
-  baseURL: process.env.NODE_ENV === 'production'
-    ? '/api'
-    : 'http://localhost:5000/api',
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5000/api',
   headers: {
     'Content-Type': 'application/json'
   }
