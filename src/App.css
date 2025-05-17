@@ -1,0 +1,410 @@
+body, html {
+  background-color: #f8f9fa !important;
+  color: #333 !important;
+}
+.dashboard-layout {
+  background-color: #f8f9fa !important;
+  color: #333 !important;
+}
+.App {
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+  z-index: 1000;
+}
+.sidebar.collapsed {
+  width: 70px !important;
+}
+/* When sidebar is collapsed, center the icons */
+.sidebar.collapsed .icon {
+  margin-right: 0;
+  text-align: center;
+  width: 100%;
+}
+.sidebar .nav-link {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.8rem 1rem;
+}
+
+.sidebar .nav-link:hover, 
+.sidebar .nav-link.active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link .icon {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar-collapsed .sidebar .nav-link .label {
+  display: none;
+}
+/* Icon styling */
+.sidebar .icon {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+
+.main-content {
+  flex: 1;
+  transition: margin-left 0.3s ease;
+}
+.page-content {
+  padding: 1.5rem;
+  background-color: #fff !important;
+}
+.sidebar.closed + .main-content {
+  width: calc(100% - 70px);
+}
+/* Ensure main content expands when sidebar collapses */
+.sidebar.collapsed + .main-content {
+  margin-left: 70px;
+}
+
+/* Dashboard card styles */
+.card {
+  transition: all 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+/* Badge styling */
+.badge {
+  font-weight: normal;
+  padding: 0.5em 0.75em;
+}
+
+/* Table styling */
+.table th {
+  font-weight: 600;
+  border-top: none;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* Force sidebar nav links to be visible */
+/* Better hover effect */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Active link styling */
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 0 !important;
+    position: fixed;
+    z-index: 1000;
+  }
+  
+  .sidebar.open {
+    width: 250px !important;
+  }
+  
+  .main-content {
+    width: 100% !important;
+  }
+  /* Add these styles to your App.css file */
+
+.lead-card {
+  transition: all 0.3s ease;
+}
+
+.lead-card:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Styling for badge showing saved timestamp */
+.badge.bg-primary {
+  font-weight: normal;
+  font-size: 0.75rem;
+}
+
+/* Add these styles to your App.css file */
+
+/* Timeline for lead activity */
+.timeline-item {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.timeline-icon {
+  width: 30px;
+  height: 30px;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-content {
+  border-left: 1px solid #dee2e6;
+  padding-left: 15px;
+}
+
+/* Status badges */
+.badge {
+  font-weight: normal;
+  padding: 0.5em 0.75em;
+}
+
+/* Cursor for sortable table headers */
+th[style*="cursor: pointer"]:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Task list styles */
+.task-list .form-check {
+  margin-bottom: 0;
+}
+
+/* Lead details sidebar */
+@media (min-width: 992px) {
+  .lead-sidebar {
+    position: sticky;
+    top: 20px;
+  }
+}
+
+/* Timeline for company activity */
+.timeline-item {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.timeline-icon {
+  width: 30px;
+  height: 30px;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-content {
+  border-left: 1px solid #dee2e6;
+  padding-left: 15px;
+}
+
+/* Company badges */
+.badge {
+  font-weight: normal;
+  padding: 0.5em 0.75em;
+}
+
+/* Task list styles */
+.task-list .form-check {
+  margin-bottom: 0;
+}
+
+/* Company sidebar */
+@media (min-width: 992px) {
+  .company-sidebar {
+    position: sticky;
+    top: 20px;
+  }
+}
+
+/* Cursor for sortable table headers */
+th[style*="cursor: pointer"]:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Delivery component specific styles */
+.timeline-item {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.timeline-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.driver-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-placeholder {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card hover effects for delivery items */
+.delivery-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease;
+}
+
+/* Financial components specific styles */
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Budget planner progress bars */
+.progress-bar {
+  min-width: 2rem;
+}
+
+/* Transaction cards */
+.transaction-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transaction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Report filters */
+.report-nav .nav-link.active {
+  background-color: #f8f9fa;
+  color: #0d6efd;
+  border-left: 3px solid #0d6efd;
+}
+
+.report-nav .nav-link {
+  color: #495057;
+  border-left: 3px solid transparent;
+}
+
+/* Financial summary stats */
+.financial-stat {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #f8f9fa;
+  height: 100%;
+}
+
+.financial-stat-icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+/* Driver components styling */
+.timeline-item {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.timeline-icon {
+  width: 30px;
+  height: 30px;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-content {
+  border-left: 1px solid #dee2e6;
+  padding-left: 15px;
+}
+/* Navigation Styling */
+.breadcrumb {
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+}
+
+.back-button {
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  transform: translateX(-2px);
+}
+
+/* Page title styling */
+.page-title-container {
+  margin-bottom: 1.5rem;
+}
+
+.page-title-container h1 {
+  margin-bottom: 0.25rem;
+}
+
+.page-title-container .text-muted {
+  font-size: 0.9rem;
+}
+.hover-highlight:hover {
+  background-color: rgba(0, 123, 255, 0.05);
+}
+}

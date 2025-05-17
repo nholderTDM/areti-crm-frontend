@@ -1,0 +1,181 @@
+/* frontend/src/assets/css/styles.css */
+
+:root {
+    --primary-blue: #0C3B66;
+    --bright-blue: #1E88E5;
+    --flame-orange: #FF5722;
+    --amber-orange: #FF9800;
+    --light-gray: #f5f5f5;
+    --dark-gray: #333333;
+    --white: #ffffff;
+  }
+  
+  body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Dashboard Layout */
+  .dashboard-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebar {
+    background-color: var(--primary-blue);
+    width: 240px;
+    transition: all 0.3s;
+    position: fixed;
+    height: 100vh;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+  
+  .sidebar.closed {
+    width: 70px;
+  }
+  
+  .sidebar-header {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar-nav .nav-item {
+    margin-bottom: 0.25rem;
+  }
+  
+  .sidebar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s;
+  }
+  
+  .sidebar-nav .nav-link:hover,
+  .sidebar-nav .nav-link.active {
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar-nav .nav-link .icon {
+    margin-right: 1rem;
+    width: 20px;
+    text-align: center;
+  }
+  
+  .sidebar.closed .nav-link .title {
+    display: none;
+  }
+  
+  .main-content {
+    flex: 1;
+    margin-left: 240px;
+    transition: all 0.3s;
+  }
+  
+  .main-content.expanded {
+    margin-left: 70px;
+  }
+  
+  /* Dashboard Cards */
+  .icon-wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Table Styles */
+  .table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+  }
+  
+  /* Button Styles */
+  .btn-primary {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+  }
+  
+  .btn-primary:hover {
+    background-color: #0a2f50;
+    border-color: #0a2f50;
+  }
+  
+  .btn-outline-primary {
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+  }
+  
+  /* Form Styles */
+  .form-control:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 0.2rem rgba(12, 59, 102, 0.25);
+  }
+  
+  /* Card Styles */
+  .card {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  /* Animation Styles */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  /* Lead Script Navigator Styles */
+  .script-content {
+    white-space: pre-line;
+  }
+  
+  /* Mobile Responsive Styles */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 0;
+      overflow: hidden;
+    }
+    
+    .sidebar.open {
+      width: 240px;
+    }
+    
+    .main-content {
+      margin-left: 0;
+    }
+    
+    .dashboard-container {
+      position: relative;
+    }
+    
+    .sidebar {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  /* Lead List Styles */
+  .leads-page .dropdown-toggle::after {
+    display: none;
+  }
+  
+  .badge {
+    text-transform: capitalize;
+  }
