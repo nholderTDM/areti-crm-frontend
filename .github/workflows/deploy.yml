@@ -24,7 +24,7 @@ jobs:
         run: echo "dashboard.aretialliance.com" > public/CNAME
         
       - name: Build
-        run: CI=false npm run build
+        run: npm run build:prod
         env:
           REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
 
