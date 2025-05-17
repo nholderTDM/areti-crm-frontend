@@ -1,4 +1,3 @@
-// src/utils/tokenRestore.js
 export const restoreTokens = () => {
     console.log('Attempting to restore tokens...');
     
@@ -53,7 +52,7 @@ export const restoreTokens = () => {
   
   // Add this to Dashboard.js navigation check
   export const ensureSessionActive = () => {
-    const { token, user, appAuth } = restoreTokens();
+    const { token, appAuth } = restoreTokens();
     
     // Consider authenticated if ANY token is present
     return !!(token || appAuth);
